@@ -1,0 +1,50 @@
+{
+    "name": "Yappes",
+    "description": "Travel API Discovery & Marketplace",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/28121-yappes-com.jpg",
+    "tags": [
+        "discovery",
+        "have api",
+        "marketplaces",
+        "new"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/yappes\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Yappes",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/28121-yappes-com.jpg",
+            "humanURL": "https:\/\/yappes.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/yappes-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/yappes-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/yappes"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/yappestech"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/yappes.com"
+        }
+    ]
+}
