@@ -1,0 +1,317 @@
+{
+  "@context": {
+    "@vocab": "https://yappes.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "yappes": "https://yappes.com/schema#",
+    "GetBackendPathResponse": "yappes:GetBackendPathResponse",
+    "key": {
+      "@id": "yappes:key",
+      "@type": "xsd:string"
+    },
+    "GetV1MintOrganizationsOrgreferenceidTransactionsUsersUserref": "yappes:GetV1MintOrganizationsOrgreferenceidTransactionsUsersUserref",
+    "transaction": {
+      "@id": "yappes:transaction",
+      "@container": "@list"
+    },
+    "GetV1OrganizationsPartnerEmailidResponse": "yappes:GetV1OrganizationsPartnerEmailidResponse",
+    "code": {
+      "@id": "yappes:code",
+      "@type": "xsd:integer"
+    },
+    "status": {
+      "@id": "yappes:status",
+      "@type": "xsd:string"
+    },
+    "PostV1OrganizationsOrgreferenceidApiproductsApiproductrefere": "yappes:PostV1OrganizationsOrgreferenceidApiproductsApiproductrefere",
+    "displayName": {
+      "@id": "yappes:displayName",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "yappes:description",
+      "@type": "xsd:string"
+    },
+    "state": {
+      "@id": "yappes:state",
+      "@type": "xsd:string"
+    },
+    "recurringFee": {
+      "@id": "yappes:recurringFee"
+    },
+    "consumptionPricingType": {
+      "@id": "yappes:consumptionPricingType",
+      "@type": "xsd:string"
+    },
+    "consumptionPricingRates": {
+      "@id": "yappes:consumptionPricingRates",
+      "@container": "@list"
+    },
+    "billingPeriod": {
+      "@id": "yappes:billingPeriod",
+      "@type": "xsd:string"
+    },
+    "paymentFundingModel": {
+      "@id": "yappes:paymentFundingModel",
+      "@type": "xsd:string"
+    },
+    "PostV1OrganizationsOrgreferenceidApiproductsApiproductrefere2": "yappes:PostV1OrganizationsOrgreferenceidApiproductsApiproductrefere2",
+    "name": {
+      "@id": "yappes:name",
+      "@type": "xsd:string"
+    },
+    "createdAt": {
+      "@id": "yappes:createdAt",
+      "@type": "xsd:string"
+    },
+    "lastModifiedAt": {
+      "@id": "yappes:lastModifiedAt",
+      "@type": "xsd:string"
+    },
+    "GetV1OrganizationsOrgreferenceidApisResponse": "yappes:GetV1OrganizationsOrgreferenceidApisResponse",
+    "proxies": {
+      "@id": "yappes:proxies",
+      "@container": "@list"
+    },
+    "GetV1OrganizationsOrgreferenceidApisProxynameResponse": "yappes:GetV1OrganizationsOrgreferenceidApisProxynameResponse",
+    "proxy": {
+      "@id": "yappes:proxy"
+    },
+    "proxy.apiId": {
+      "@id": "yappes:proxy.apiId",
+      "@type": "xsd:string"
+    },
+    "proxy.name": {
+      "@id": "yappes:proxy.name",
+      "@type": "xsd:string"
+    },
+    "proxy.baseUrl": {
+      "@id": "yappes:proxy.baseUrl",
+      "@type": "xsd:string"
+    },
+    "proxy.yappesBaseUrl": {
+      "@id": "yappes:proxy.yappesBaseUrl",
+      "@type": "xsd:string"
+    },
+    "proxy.metaData": {
+      "@id": "yappes:proxy.metaData"
+    },
+    "proxy.metaData.createdAt": {
+      "@id": "yappes:proxy.metaData.createdAt",
+      "@type": "xsd:string"
+    },
+    "proxy.metaData.lastModifiedAt": {
+      "@id": "yappes:proxy.metaData.lastModifiedAt",
+      "@type": "xsd:string"
+    },
+    "proxy.metaData.subType": {
+      "@id": "yappes:proxy.metaData.subType",
+      "@type": "xsd:string"
+    },
+    "proxy.resources": {
+      "@id": "yappes:proxy.resources",
+      "@container": "@list"
+    },
+    "GetV1OrganizationsOrgreferenceidAppsAppreferenceidResponse": "yappes:GetV1OrganizationsOrgreferenceidAppsAppreferenceidResponse",
+    "appId": {
+      "@id": "yappes:appId",
+      "@type": "xsd:string"
+    },
+    "userId": {
+      "@id": "yappes:userId",
+      "@type": "xsd:string"
+    },
+    "userEmail": {
+      "@id": "yappes:userEmail",
+      "@type": "xsd:string"
+    },
+    "credentials": {
+      "@id": "yappes:credentials",
+      "@container": "@list"
+    },
+    "attributes": {
+      "@id": "yappes:attributes",
+      "@container": "@list"
+    },
+    "callbackUrl": {
+      "@id": "yappes:callbackUrl",
+      "@type": "xsd:string"
+    },
+    "scopes": {
+      "@id": "yappes:scopes",
+      "@container": "@list"
+    },
+    "keyExpiresIn": {
+      "@id": "yappes:keyExpiresIn",
+      "@type": "xsd:string"
+    },
+    "PostV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesR": "yappes:PostV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesR",
+    "timeRange": {
+      "@id": "yappes:timeRange",
+      "@type": "xsd:string"
+    },
+    "metrics": {
+      "@id": "yappes:metrics",
+      "@container": "@list"
+    },
+    "dimensions": {
+      "@id": "yappes:dimensions",
+      "@container": "@list"
+    },
+    "groupByTimeUnit": {
+      "@id": "yappes:groupByTimeUnit",
+      "@type": "xsd:string"
+    },
+    "limit": {
+      "@id": "yappes:limit",
+      "@type": "xsd:integer"
+    },
+    "PostV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesR2": "yappes:PostV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesR2",
+    "created": {
+      "@id": "yappes:created",
+      "@type": "xsd:string"
+    },
+    "updated": {
+      "@id": "yappes:updated",
+      "@type": "xsd:string"
+    },
+    "GetV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesQu": "yappes:GetV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesQu",
+    "PostV1OrganizationsOrgreferenceidUsersRequest": "yappes:PostV1OrganizationsOrgreferenceidUsersRequest",
+    "email": {
+      "@id": "yappes:email",
+      "@type": "xsd:string"
+    },
+    "firstName": {
+      "@id": "yappes:firstName",
+      "@type": "xsd:string"
+    },
+    "lastName": {
+      "@id": "yappes:lastName",
+      "@type": "xsd:string"
+    },
+    "userName": {
+      "@id": "yappes:userName",
+      "@type": "xsd:string"
+    },
+    "PostV1OrganizationsOrgreferenceidUsersResponse": "yappes:PostV1OrganizationsOrgreferenceidUsersResponse",
+    "data.email": {
+      "@id": "yappes:data.email",
+      "@type": "xsd:string"
+    },
+    "data.firstName": {
+      "@id": "yappes:data.firstName",
+      "@type": "xsd:string"
+    },
+    "data.lastName": {
+      "@id": "yappes:data.lastName",
+      "@type": "xsd:string"
+    },
+    "data.organizationName": {
+      "@id": "yappes:data.organizationName",
+      "@type": "xsd:string"
+    },
+    "data.status": {
+      "@id": "yappes:data.status",
+      "@type": "xsd:string"
+    },
+    "data.userId": {
+      "@id": "yappes:data.userId",
+      "@type": "xsd:string"
+    },
+    "data.createdAt": {
+      "@id": "yappes:data.createdAt",
+      "@type": "xsd:string"
+    },
+    "data.modifiedAt": {
+      "@id": "yappes:data.modifiedAt",
+      "@type": "xsd:string"
+    },
+    "PostV1OrganizationsOrgreferenceidUsersUseremailBalanceCredit": "yappes:PostV1OrganizationsOrgreferenceidUsersUseremailBalanceCredit",
+    "transactionAmount": {
+      "@id": "yappes:transactionAmount"
+    },
+    "transactionAmount.currencyCode": {
+      "@id": "yappes:transactionAmount.currencyCode",
+      "@type": "xsd:string"
+    },
+    "transactionAmount.units": {
+      "@id": "yappes:transactionAmount.units",
+      "@type": "xsd:string"
+    },
+    "transactionAmount.nanos": {
+      "@id": "yappes:transactionAmount.nanos",
+      "@type": "xsd:integer"
+    },
+    "PostV1OrganizationsOrgreferenceidUsersUseremailBalanceCredit2": "yappes:PostV1OrganizationsOrgreferenceidUsersUseremailBalanceCredit2",
+    "wallets": {
+      "@id": "yappes:wallets",
+      "@container": "@list"
+    },
+    "GetV1OrganizationsOrgreferenceidUsersUserreferenceidResponse": "yappes:GetV1OrganizationsOrgreferenceidUsersUserreferenceidResponse",
+    "organizationName": {
+      "@id": "yappes:organizationName",
+      "@type": "xsd:string"
+    },
+    "apps": {
+      "@id": "yappes:apps",
+      "@container": "@list"
+    },
+    "PostV1OrganizationsOrgreferenceidUsersUserreferenceAppsReque": "yappes:PostV1OrganizationsOrgreferenceidUsersUserreferenceAppsReque",
+    "apiProducts": {
+      "@id": "yappes:apiProducts",
+      "@container": "@list"
+    },
+    "PostV1OrganizationsOrgreferenceidUsersUserreferenceAppsRespo": "yappes:PostV1OrganizationsOrgreferenceidUsersUserreferenceAppsRespo",
+    "appFamily": {
+      "@id": "yappes:appFamily",
+      "@type": "xsd:string"
+    },
+    "PutV1OrganizationsOrgreferenceidUsersUserreferenceAppsAppnam": "yappes:PutV1OrganizationsOrgreferenceidUsersUserreferenceAppsAppnam",
+    "PutV1OrganizationsOrgreferenceidUsersUserreferenceUsermoneti": "yappes:PutV1OrganizationsOrgreferenceidUsersUserreferenceUsermoneti",
+    "billingType": {
+      "@id": "yappes:billingType",
+      "@type": "xsd:string"
+    },
+    "PutV1OrganizationsOrgreferenceidUsersUserreferenceUsermoneti2": "yappes:PutV1OrganizationsOrgreferenceidUsersUserreferenceUsermoneti2",
+    "data.state": {
+      "@id": "yappes:data.state",
+      "@type": "xsd:string"
+    },
+    "data.billingType": {
+      "@id": "yappes:data.billingType",
+      "@type": "xsd:string"
+    },
+    "PostV1OrganizationsOrgreferenceidSetaddonsRequest": "yappes:PostV1OrganizationsOrgreferenceidSetaddonsRequest",
+    "addonsConfig.monetizationConfig.enabled": {
+      "@id": "yappes:addonsConfig.monetizationConfig.enabled",
+      "@type": "xsd:boolean"
+    },
+    "PostV1OrganizationsOrgreferenceidSetaddonsResponse": "yappes:PostV1OrganizationsOrgreferenceidSetaddonsResponse",
+    "metadata.operationType": {
+      "@id": "yappes:metadata.operationType",
+      "@type": "xsd:string"
+    },
+    "metadata.targetResourceName": {
+      "@id": "yappes:metadata.targetResourceName",
+      "@type": "xsd:string"
+    },
+    "metadata.state": {
+      "@id": "yappes:metadata.state",
+      "@type": "xsd:string"
+    },
+    "PostV1OrganizationsOrganizationreferenceidUsersUserreference": "yappes:PostV1OrganizationsOrganizationreferenceidUsersUserreference",
+    "attribute": {
+      "@id": "yappes:attribute",
+      "@container": "@list"
+    },
+    "PostV1OrganizationsOrganizationreferenceidUsersUserreference2": "yappes:PostV1OrganizationsOrganizationreferenceidUsersUserreference2"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Yappes API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Yappes's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-21) from openapi/_ae-authored/yappes-openapi-generated.yml.",
+  "dcterms:created": "2026-10-21",
+  "dcterms:source": [
+    "openapi/_ae-authored/yappes-openapi-generated.yml"
+  ]
+}

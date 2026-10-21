@@ -1,23 +1,94 @@
 aid: yappes
+
 name: Yappes
-description: 'Yappes is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://framerusercontent.com/assets/wHckNQSOBev9EjMmlz8F9R2Y7A.png
+
+description: Yappes provides a unified API management platform that enables enterprises to design, secure, publish, monitor, and monetize APIs
+  at scale. The solution offers a graphical interface for lifecycle management, policy enforcement, analytics, and developer portal capabilities,
+  helping organizations avoid fragmented tooling and improve governance across their API ecosystem.
+
 url: https://raw.githubusercontent.com/api-evangelist/yappes/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:g2-catalog
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-21 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-21'
+
 modified: '2026-10-21'
+
 tags:
 - Company
-apis: []
+- API Management
+- Unified Platform
+- Developer Portal
+- Analytics
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/yappes-rules.yml
+- type: JSONLD
+  url: json-ld/yappes-context.jsonld
+- type: Vocabulary
+  url: vocabulary/yappes-vocabulary.yml
+- type: DataModel
+  url: data-model/yappes-data-model.yml
+- type: Authentication
+  url: authentication/yappes-authentication.yml
+- type: Conformance
+  url: conformance/yappes-conformance.yml
+- type: LLMsTxt
+  url: llms/yappes-llms.txt
+- type: Hosts
+  url: hosts/yappes-hosts.yml
+- type: Newsroom
+  url: https://yappes.com/news
+- type: GettingStarted
+  url: https://docs.yappes.com/admin_console/sso-setup/
+- type: Documentation
+  url: https://docs.yappes.com/
+- type: DomainSecurity
+  url: security/yappes-domain-security.yml
 - type: Website
   url: https://yappes.com/
+
+apis:
+- aid: yappes:yappes-api
+  name: Yappes API
+  description: 'Yappes API as documented publicly: 21 operations. Contract generated from the documentation by API Evangelist (2026-10-21); not
+    the provider''s own document.'
+  humanURL: https://docs.yappes.com/manage_apis/my_apis/onboard_via_curl
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/yappes-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/yappes-get-v1-mint-organizations-orgreferenceid-transactions-users-userref-schema.json
+  - type: JSONSchema
+    url: json-schema/yappes-get-v1-organizations-orgreferenceid-apis-response-schema.json
+  - type: JSONSchema
+    url: json-schema/yappes-get-v1-organizations-orgreferenceid-apis-proxyname-response-schema.json
+  - type: JSONSchema
+    url: json-schema/yappes-post-v1-organizations-orgreferenceid-apiproducts-apiproductrefere2-schema.json
+  - type: JSONSchema
+    url: json-schema/yappes-post-v1-organizations-orgreferenceid-environments-envname-queries-r-schema.json
+  - type: JSONSchema
+    url: json-schema/yappes-get-v1-organizations-orgreferenceid-apps-appreferenceid-response-schema.json
+x-enrichment:
+  date: '2026-10-21'
+  status: enriched
+  artifacts_added: 22
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

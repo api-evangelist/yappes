@@ -1,0 +1,57 @@
+generated: '2026-10-21'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.yappes.com/manage_apis/related_topics/api_authentication/
+sources:
+- https://docs.yappes.com/manage_apis/related_topics/api_authentication/
+- https://docs.yappes.com/manage_apis/related_topics/yappes_oauth/
+- https://docs.yappes.com/admin_console/oauth2-config/
+- https://docs.yappes.com/admin_console/api-keys/
+description: Authentication schemes supported by Yappes as documented.
+schemes:
+- type: http-basic
+  name: HTTP Basic Authentication
+  evidence: 'The first authentication type avaialble is HTTP Basic. If you select it, then you need to: Enter the Username . Then, Password .'
+  location: header
+  header: Authorization
+  how_to_obtain: Enter username and password in the tryout operation prompt.
+- type: other
+  name: Header Authentication
+  evidence: Through Header authentication, you add the authentication credentials in the headers of the API request.
+  location: header
+  header: User-provided Header Name
+  how_to_obtain: Enter Header Name and Header Value in the authentication configuration.
+- type: other
+  name: OAuth 1 Authentication
+  evidence: The third authentication type available is OAuth 1. The OAuth 1 authentication at Yappes provides a secure way to authorize user access
+    to an API.
+  location: header
+  header: Authorization
+  authorize_url: Authorize token URL
+  how_to_obtain: Provide Consumer key, Consumer secret, Signature method, Timestamp, Nonce, Version, Realm, and token URLs.
+- type: other
+  name: Query Parameters Authentication
+  evidence: The Query Parameters authentication is a simple method of authentication where the authentication credentials are passed as query
+    parameters in the API request.
+  location: query
+  how_to_obtain: Enter Query Parameter Name and its Value in the authentication configuration.
+- type: oauth2
+  name: OAuth 2 Authentication
+  evidence: At Yappes, you can enable the OAuth 2 authentication based on Client Credentials or Authorization Code that involves Access token
+    URL , Authentication URL and Scope.
+  location: header
+  header: Authorization
+  authorize_url: Authentication URL (for Authorization Code grant)
+  scopes:
+  - Scope (as entered)
+  how_to_obtain: Select Grant Type (Client Credentials or Authorization Code), then provide Access token URL, optional Authentication URL, and
+    Scope.
+- type: other
+  name: Yappes OAuth
+  evidence: Yappes OAuth is a platform-managed OAuth 2.0 authentication model.
+  location: header
+  header: Authorization
+  scopes:
+  - Per-endpoint scopes defined by provider
+  how_to_obtain: Consumers receive per-application client credentials after subscription and obtain a Bearer token from the platform OAuth server.
+docs: https://docs.yappes.com/manage_apis/related_topics/api_authentication/

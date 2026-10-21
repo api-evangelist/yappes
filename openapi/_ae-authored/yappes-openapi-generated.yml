@@ -1,0 +1,1233 @@
+openapi: 3.1.0
+info:
+  title: Yappes API
+  version: '2026-10-21'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-21: 21 operation(s) read from 10 public documentation page(s) (each
+    operation names its page in x-source). This is not the provider''s published contract; Yappes has published no machine-readable contract that
+    the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 3
+    documentation: 18
+    pages-with-code: 9
+    pages-read: 10
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-21'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.yappes.com/manage_apis/my_apis/onboard_via_curl
+  - https://docs.yappes.com/manage_apis/my_apis/onboard_soap_apis
+  - https://docs.yappes.com/platform_api/user
+  - https://docs.yappes.com/platform_api/proxy
+  - https://docs.yappes.com/platform_api/user_app
+  - https://docs.yappes.com/platform_api/rate_plans
+  - https://docs.yappes.com/platform_api/organization
+  - https://docs.yappes.com/manage_apis/reports/reports
+  - https://docs.yappes.com/platform_api/custom_attributes
+  - https://docs.yappes.com/platform_api/wallet_transaction
+paths:
+  /:
+    get:
+      operationId: get
+      tags:
+      - Api
+      summary: GET /
+      x-source: https://docs.yappes.com/manage_apis/my_apis/onboard_soap_apis
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl Command\n Onboard SOAP APIs\n Onboard SOAP APIs\n Table of contents\n Overview\n Prerequisites\n Step-by-Step Implementation\n\
+          \ Step 1: Navigate to My APIs\n Step 2: Initiate API Onboarding\n Step 3: Select SOAP as API Type\n Step 4: Configure Basic API Information\n\
+          \ Step 5: Save Initial Configuration\n Step 6: Configure Upstream Servers, Logo, and Tags\n Step 7: Add SOAP Operations\n Step 8: Configure\
+          \ Oper"
+  /backend/path:
+    get:
+      operationId: get_backend_path
+      tags:
+      - Backend
+      summary: This endpoint serves the purpose of [brief description].
+      x-source: https://docs.yappes.com/manage_apis/reports/reports
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBackendPathResponse'
+      x-evidence:
+        kind: documentation
+  /services/UserService:
+    post:
+      operationId: post_services_UserService
+      tags:
+      - Services
+      summary: POST /services/UserService
+      x-source: https://docs.yappes.com/manage_apis/my_apis/onboard_via_curl
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST 'https://soap.example.com/services/UserService'  --header 'Content-Type: text/xml; charset=utf-8'  --header 'SOAPAction:\
+          \ urn:getUser'  --header 'x-publishing-path: /public'  --data '<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"\
+          ><soap:Body><getUser><id>123</id></getUser></soap:Body></soap:Envelope>' \n For full Onboard SOAP APIs options (WSDL upload, multiple\
+          \ ope"
+  /users:
+    get:
+      operationId: get_users
+      tags:
+      - Users
+      summary: GET /users
+      x-source: https://docs.yappes.com/manage_apis/my_apis/onboard_via_curl
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X GET 'https://api.example.com/users'  --header 'x-publishing-path: /public' \n What gets extracted ¶ "
+  /v1/mint/organizations/{orgreferenceid}/transactions/users/{userreference}:
+    get:
+      operationId: get_v1_mint_organizations_orgreferenceid_transactions_users_userreference
+      tags:
+      - Mint
+      summary: Lists a user's wallet recharge transactions.
+      description: Credit user wallet balance and list wallet recharge transaction history.
+      x-source: https://docs.yappes.com/platform_api/wallet_transaction
+      parameters:
+      - name: orgreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: userreference
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: productId
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Reported back as apiProduct on each transaction.
+      - name: utctime
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Lower bound for submittedDateTime .
+      - name: utctime2
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Upper bound for submittedDateTime .
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: Maximum results. Default 100 , maximum 1000 .
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1MintOrganizationsOrgreferenceidTransactionsUsersUserref'
+      x-evidence:
+        kind: documentation
+  /v1/organizations/partner/{emailid}:
+    get:
+      operationId: get_v1_organizations_partner_emailid
+      tags:
+      - Organizations
+      summary: Lists all external organizations that a given email is a member of, enriched with userCount, apiCount, and billingDetails.
+      description: Requires a valid x‑yappes‑key header.
+      x-source: https://docs.yappes.com/platform_api/organization
+      parameters:
+      - name: emailid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1OrganizationsPartnerEmailidResponse'
+      x-evidence:
+        kind: documentation
+  /v1/organizations/{orgreferenceid}/apiproducts/{apiproductreferenceid}/rateplans:
+    post:
+      operationId: post_v1_organizations_orgreferenceid_apiproducts_apiproductreferenceid_rateplans
+      tags:
+      - Organizations
+      summary: Create rate plans for API products with recurring and consumption pricing.
+      x-source: https://docs.yappes.com/platform_api/rate_plans
+      parameters:
+      - name: orgreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: apiproductreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1OrganizationsOrgreferenceidApiproductsApiproductrefere'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1OrganizationsOrgreferenceidApiproductsApiproductrefere2'
+      x-evidence:
+        kind: documentation
+  /v1/organizations/{orgreferenceid}/apis:
+    get:
+      operationId: get_v1_organizations_orgreferenceid_apis
+      tags:
+      - Organizations
+      summary: Lists all APIs (proxies) for an organization, including endpoint resources and metadata.
+      description: List API proxies for an organization.
+      x-source: https://docs.yappes.com/platform_api/proxy
+      parameters:
+      - name: orgreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1OrganizationsOrgreferenceidApisResponse'
+      x-evidence:
+        kind: documentation
+  /v1/organizations/{orgreferenceid}/apis/{proxyname}:
+    get:
+      operationId: get_v1_organizations_orgreferenceid_apis_proxyname
+      tags:
+      - Organizations
+      summary: Gets a specific API proxy by proxy name.
+      description: Get API proxy by name.
+      x-source: https://docs.yappes.com/platform_api/proxy
+      parameters:
+      - name: orgreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: proxyname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1OrganizationsOrgreferenceidApisProxynameResponse'
+      x-evidence:
+        kind: documentation
+  /v1/organizations/{orgreferenceid}/apps/{appreferenceid}:
+    get:
+      operationId: get_v1_organizations_orgreferenceid_apps_appreferenceid
+      tags:
+      - Organizations
+      summary: Gets the profile for an app in an organization.
+      description: Gets the profile for an app in an organization.
+      x-source: https://docs.yappes.com/platform_api/user_app
+      parameters:
+      - name: orgreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: appreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1OrganizationsOrgreferenceidAppsAppreferenceidResponse'
+      x-evidence:
+        kind: documentation
+  /v1/organizations/{orgreferenceid}/environments/{envname}/queries:
+    post:
+      operationId: post_v1_organizations_orgreferenceid_environments_envname_queries
+      tags:
+      - Organizations
+      summary: Runs an analytics query against gateway traffic data and returns a query descriptor.
+      description: Requires a valid x‑yappes‑key header.
+      x-source: https://docs.yappes.com/platform_api/organization
+      parameters:
+      - name: orgreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: envname
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesR'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesR2'
+      x-evidence:
+        kind: documentation
+  /v1/organizations/{orgreferenceid}/environments/{envname}/queries/{queryid}/result:
+    get:
+      operationId: get_v1_organizations_orgreferenceid_environments_envname_queries_queryid_result
+      tags:
+      - Organizations
+      summary: Fetches the result of a previously created analytics query.
+      description: Requires a valid x‑yappes‑key header.
+      x-source: https://docs.yappes.com/platform_api/organization
+      parameters:
+      - name: orgreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: envname
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: queryid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesQu'
+      x-evidence:
+        kind: documentation
+  /v1/organizations/{orgreferenceid}/users:
+    post:
+      operationId: post_v1_organizations_orgreferenceid_users
+      tags:
+      - Organizations
+      summary: Invites (or re-invites) a user to an organization.
+      description: Requires a valid x-yappes-key header.
+      x-source: https://docs.yappes.com/platform_api/user
+      parameters:
+      - name: orgreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1OrganizationsOrgreferenceidUsersRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1OrganizationsOrgreferenceidUsersResponse'
+      x-evidence:
+        kind: documentation
+  /v1/organizations/{orgreferenceid}/users/{useremail}/balance{credit}:
+    post:
+      operationId: post_v1_organizations_orgreferenceid_users_useremail_balance_credit
+      tags:
+      - Organizations
+      summary: Credits a user's wallet balance.
+      description: Credits a user's wallet balance.
+      x-source: https://docs.yappes.com/platform_api/wallet_transaction
+      parameters:
+      - name: orgreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: useremail
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: credit
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1OrganizationsOrgreferenceidUsersUseremailBalanceCredit'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1OrganizationsOrgreferenceidUsersUseremailBalanceCredit2'
+      x-evidence:
+        kind: documentation
+  /v1/organizations/{orgreferenceid}/users/{userreferenceid}:
+    get:
+      operationId: get_v1_organizations_orgreferenceid_users_userreferenceid
+      tags:
+      - Organizations
+      summary: Gets the profile for a user in an organization.
+      description: Requires a valid x-yappes-key header.
+      x-source: https://docs.yappes.com/platform_api/user
+      parameters:
+      - name: orgreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: userreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1OrganizationsOrgreferenceidUsersUserreferenceidResponse'
+      x-evidence:
+        kind: documentation
+  /v1/organizations/{orgreferenceid}/users/{userReferenceId}?action={action}:
+    post:
+      operationId: post_v1_organizations_orgreferenceid_users_userReferenceId_action_action
+      tags:
+      - Organizations
+      summary: Enables or disables a user within an organization.
+      description: Returns 204 No Content with an empty JSON object. Requires a valid x-yappes-key header.
+      x-source: https://docs.yappes.com/platform_api/user
+      parameters:
+      - name: orgreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: userReferenceId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: action
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: action
+        in: query
+        required: true
+        schema:
+          type: string
+        description: Must be active or inactive. Any other value returns 400.
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /v1/organizations/{orgreferenceid}/users/{userreference}/apps:
+    post:
+      operationId: post_v1_organizations_orgreferenceid_users_userreference_apps
+      tags:
+      - Organizations
+      summary: Creates an app for a user.
+      description: Creates an app for a user.
+      x-source: https://docs.yappes.com/platform_api/user_app
+      parameters:
+      - name: orgreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: userreference
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1OrganizationsOrgreferenceidUsersUserreferenceAppsReque'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1OrganizationsOrgreferenceidUsersUserreferenceAppsRespo'
+      x-evidence:
+        kind: documentation
+  /v1/organizations/{orgreferenceid}/users/{userreference}/apps/{appName}?action={action}:
+    put:
+      operationId: put_v1_organizations_orgreferenceid_users_userreference_apps_appName_action_acti
+      tags:
+      - Organizations
+      summary: Approves or revokes a user app (enables or disables its subscription).
+      description: Approves or revokes a user app (enables or disables its subscription).
+      x-source: https://docs.yappes.com/platform_api/user_app
+      parameters:
+      - name: orgreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: userreference
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: appName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: action
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: action
+        in: query
+        required: true
+        schema:
+          type: string
+        description: approve (enable) or revoke (disable).
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutV1OrganizationsOrgreferenceidUsersUserreferenceAppsAppnam'
+      x-evidence:
+        kind: documentation
+  /v1/organizations/{orgreferenceid}/users/{userreference}/userMonetizationConfig:
+    put:
+      operationId: put_v1_organizations_orgreferenceid_users_userreference_userMonetizationConfig
+      tags:
+      - Organizations
+      summary: Updates a user's monetization configuration (billing type and active state).
+      description: Requires a valid x-yappes-key header.
+      x-source: https://docs.yappes.com/platform_api/user
+      parameters:
+      - name: orgreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: userreference
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutV1OrganizationsOrgreferenceidUsersUserreferenceUsermoneti'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutV1OrganizationsOrgreferenceidUsersUserreferenceUsermoneti2'
+      x-evidence:
+        kind: documentation
+  /v1/organizations/{orgReferenceId}{setAddons}:
+    post:
+      operationId: post_v1_organizations_orgReferenceId_setAddons
+      tags:
+      - Organizations
+      summary: Enables or disables the monetization add‑on for an organization.
+      description: Requires a valid x‑yappes‑key header.
+      x-source: https://docs.yappes.com/platform_api/organization
+      parameters:
+      - name: orgReferenceId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: setAddons
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1OrganizationsOrgreferenceidSetaddonsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1OrganizationsOrgreferenceidSetaddonsResponse'
+      x-evidence:
+        kind: documentation
+  /v1/organizations/{organizationreferenceid}/users/{userreference}/apps/{appreference}/attributes:
+    post:
+      operationId: post_v1_organizations_organizationreferenceid_users_userreference_apps_apprefere
+      tags:
+      - Organizations
+      summary: Set custom name-value attributes on a user's application.
+      description: Sets custom attributes on a user's app. You only supply the attribute array in the request body; other application settings
+        are preserved automatically. Attribute names are required; values are optional strings.
+      x-source: https://docs.yappes.com/platform_api/custom_attributes
+      parameters:
+      - name: organizationreferenceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: userreference
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: appreference
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV1OrganizationsOrganizationreferenceidUsersUserreference'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1OrganizationsOrganizationreferenceidUsersUserreference2'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    GetBackendPathResponse:
+      type: object
+      properties:
+        key:
+          type: string
+    GetV1MintOrganizationsOrgreferenceidTransactionsUsersUserref:
+      type: object
+      properties:
+        transaction:
+          type: array
+          description: List of transactions.
+        transaction[].id:
+          type: string
+          description: Transaction identifier.
+        transaction[].transactionTime:
+          type: string
+          description: Time of the transaction.
+        transaction[].userEmail:
+          type: string
+          description: User email.
+        transaction[].apiProduct:
+          type: string
+          description: Product identifier.
+        transaction[].applicationName:
+          type: string
+          description: Application name.
+        transaction[].proxyName:
+          type: string
+          description: Proxy name.
+        transaction[].requestCount:
+          type: integer
+          description: Number of requests.
+        transaction[].chargeAmount:
+          type: object
+          description: Charge amount details.
+        transaction[].chargeAmount.currencyCode:
+          type: string
+          description: Currency code.
+        transaction[].chargeAmount.units:
+          type: string
+          description: Units.
+        transaction[].chargeAmount.nanos:
+          type: integer
+          description: Nanos.
+        transaction[].status:
+          type: string
+          description: Transaction status.
+    GetV1OrganizationsPartnerEmailidResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: HTTP status code.
+        status:
+          type: string
+          description: Response status.
+        data[]:
+          type: array
+          description: Array of external organization objects with the same shape as the partner list.
+    PostV1OrganizationsOrgreferenceidApiproductsApiproductrefere:
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Plan display name.
+        description:
+          type: string
+          description: Plan description.
+        state:
+          type: string
+          description: PUBLISHED or DRAFT . Default PUBLISHED .
+        recurringFee:
+          type: object
+          description: Recurring fee. currencyCode sets the plan currency (default INR ).
+        consumptionPricingType:
+          type: string
+          description: Consumption pricing model label.
+        consumptionPricingRates:
+          type: array
+          description: Pricing bands. The first rate's fee is used as the per-transaction charge.
+        billingPeriod:
+          type: string
+          description: Billing period label.
+        paymentFundingModel:
+          type: string
+          description: Funding model label ( PREPAID , POSTPAID ).
+      required:
+      - displayName
+    PostV1OrganizationsOrgreferenceidApiproductsApiproductrefere2:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Resource name of the created rate plan.
+        displayName:
+          type: string
+          description: Plan display name.
+        description:
+          type: string
+          description: Plan description.
+        state:
+          type: string
+          description: Plan state.
+        recurringFee:
+          type: object
+          description: Recurring fee details.
+        consumptionPricingType:
+          type: string
+          description: Consumption pricing model.
+        consumptionPricingRates:
+          type: array
+          description: Pricing bands.
+        billingPeriod:
+          type: string
+          description: Billing period.
+        paymentFundingModel:
+          type: string
+          description: Funding model.
+        createdAt:
+          type: string
+          description: Timestamp of creation.
+        lastModifiedAt:
+          type: string
+          description: Timestamp of last modification.
+    GetV1OrganizationsOrgreferenceidApisResponse:
+      type: object
+      properties:
+        proxies:
+          type: array
+          description: Array of proxy objects.
+        proxies[].apiId:
+          type: string
+          description: API identifier.
+        proxies[].name:
+          type: string
+          description: Proxy name.
+        proxies[].baseUrl:
+          type: string
+          description: Upstream base URL.
+        proxies[].yappesBaseUrl:
+          type: string
+          description: Yappes base URL.
+        proxies[].metaData:
+          type: object
+          description: Metadata object.
+        proxies[].metaData.createdAt:
+          type: string
+          description: Creation timestamp.
+        proxies[].metaData.lastModifiedAt:
+          type: string
+          description: Last modification timestamp.
+        proxies[].metaData.subType:
+          type: string
+          description: Subtype, e.g., PROXY.
+        proxies[].resources:
+          type: array
+          description: Array of resource objects.
+        proxies[].resources[].endPointName:
+          type: string
+          description: Name of the endpoint.
+        proxies[].resources[].endPoint:
+          type: string
+          description: Endpoint path.
+        proxies[].resources[].method:
+          type: string
+          description: HTTP method.
+    GetV1OrganizationsOrgreferenceidApisProxynameResponse:
+      type: object
+      properties:
+        proxy:
+          type: object
+          description: Proxy object.
+        proxy.apiId:
+          type: string
+          description: API identifier.
+        proxy.name:
+          type: string
+          description: Proxy name.
+        proxy.baseUrl:
+          type: string
+          description: Upstream base URL.
+        proxy.yappesBaseUrl:
+          type: string
+          description: Yappes base URL.
+        proxy.metaData:
+          type: object
+          description: Metadata object.
+        proxy.metaData.createdAt:
+          type: string
+          description: Creation timestamp.
+        proxy.metaData.lastModifiedAt:
+          type: string
+          description: Last modification timestamp.
+        proxy.metaData.subType:
+          type: string
+          description: Subtype, e.g., PROXY.
+        proxy.resources:
+          type: array
+          description: Array of resource objects.
+        proxy.resources[].endPointName:
+          type: string
+          description: Name of the endpoint.
+        proxy.resources[].endPoint:
+          type: string
+          description: Endpoint path.
+        proxy.resources[].method:
+          type: string
+          description: HTTP method.
+    GetV1OrganizationsOrgreferenceidAppsAppreferenceidResponse:
+      type: object
+      properties:
+        appId:
+          type: string
+          description: Application ID.
+        name:
+          type: string
+          description: Application name.
+        userId:
+          type: string
+          description: User ID.
+        userEmail:
+          type: string
+          description: User email.
+        status:
+          type: string
+          description: Application status.
+        createdAt:
+          type: string
+          description: Creation timestamp.
+        lastModifiedAt:
+          type: string
+          description: Last modification timestamp.
+        credentials:
+          type: array
+          description: List of credentials.
+        attributes:
+          type: array
+          description: Custom attributes.
+        callbackUrl:
+          type: string
+          description: OAuth callback URL.
+        scopes:
+          type: array
+          description: OAuth scopes.
+        keyExpiresIn:
+          type: string
+          description: Key expiration.
+    PostV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesR:
+      type: object
+      properties:
+        timeRange:
+          type: string
+          description: <startISO>/<endISO> date range.
+        metrics:
+          type: array
+          description: 'At least one metric. Allowed names: message_count, response_processing_time, total_response_time, target_response_time,
+            request_processing_latency, response_processing_latency. Each item may include function: SUM, AVG, MIN, MAX, or COUNT (default SUM).'
+        dimensions:
+          type: array
+          description: 'Group‑by dimensions. Allowed names: apiproxy, proxy, client_id, developer_email, request_uri, request_path, response_status_code,
+            request_verb.'
+        groupByTimeUnit:
+          type: string
+          description: 'Time bucket unit: second, minute, hour, day, week, month, quarter, or year.'
+        limit:
+          type: integer
+          description: Max rows. Default 10000, maximum 100000.
+      required:
+      - timeRange
+      - metrics
+    PostV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesR2:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Query resource name.
+        state:
+          type: string
+          description: State of the query, e.g., enqueued.
+        created:
+          type: string
+          description: Creation timestamp (epoch ms).
+        updated:
+          type: string
+          description: Last update timestamp (epoch ms).
+    GetV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesQu:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: HTTP status code.
+        name:
+          type: string
+          description: Query resource name.
+        state:
+          type: string
+          description: State of the query, e.g., completed.
+        result.rows[]:
+          type: array
+          description: Array of result rows. Each row contains fields such as apiproxy, message_count, and optionally timestamp (epoch ms) when
+            groupByTimeUnit is set.
+    PostV1OrganizationsOrgreferenceidUsersRequest:
+      type: object
+      properties:
+        email:
+          type: string
+          description: User email. Also accepted as emailId.
+        firstName:
+          type: string
+          description: First name.
+        lastName:
+          type: string
+          description: Last name.
+        userName:
+          type: string
+          description: Username.
+        attributes:
+          type: array
+          description: Custom attributes.
+      required:
+      - email
+    PostV1OrganizationsOrgreferenceidUsersResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        status:
+          type: string
+        data.email:
+          type: string
+        data.firstName:
+          type: string
+        data.lastName:
+          type: string
+        data.organizationName:
+          type: string
+        data.status:
+          type: string
+        data.userId:
+          type: string
+        data.createdAt:
+          type: string
+        data.modifiedAt:
+          type: string
+    PostV1OrganizationsOrgreferenceidUsersUseremailBalanceCredit:
+      type: object
+      properties:
+        transactionAmount:
+          type: object
+          description: Amount to credit.
+        transactionAmount.currencyCode:
+          type: string
+          description: Currency code (default USD).
+        transactionAmount.units:
+          type: string
+          description: Units.
+        transactionAmount.nanos:
+          type: integer
+          description: Nanos.
+      required:
+      - transactionAmount
+    PostV1OrganizationsOrgreferenceidUsersUseremailBalanceCredit2:
+      type: object
+      properties:
+        wallets:
+          type: array
+          description: List of wallet info.
+        wallets[].balance:
+          type: object
+          description: Balance after credit.
+        wallets[].balance.currencyCode:
+          type: string
+          description: Echoed from the request transactionAmount.currencyCode (default USD ).
+        wallets[].balance.units:
+          type: string
+          description: Updated balance after credit.
+        wallets[].balance.nanos:
+          type: integer
+          description: Nanos part of balance.
+        wallets[].lastCreditTime:
+          type: string
+          description: Credit timestamp as epoch milliseconds.
+    GetV1OrganizationsOrgreferenceidUsersUserreferenceidResponse:
+      type: object
+      properties:
+        userId:
+          type: string
+        email:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        userName:
+          type: string
+        status:
+          type: string
+        organizationName:
+          type: string
+        createdAt:
+          type: string
+        lastModifiedAt:
+          type: string
+        apps:
+          type: array
+        attributes:
+          type: array
+    PostV1OrganizationsOrgreferenceidUsersUserreferenceAppsReque:
+      type: object
+      properties:
+        name:
+          type: string
+          description: App name. Also accepted as applicationName.
+        apiProducts:
+          type: array
+          description: Non-empty array of API product (rate plan) names.
+        attributes:
+          type: array
+          description: Custom attributes.
+        callbackUrl:
+          type: string
+          description: OAuth callback URL.
+      required:
+      - name
+      - apiProducts
+    PostV1OrganizationsOrgreferenceidUsersUserreferenceAppsRespo:
+      type: object
+      properties:
+        appId:
+          type: string
+          description: Application ID.
+        name:
+          type: string
+          description: Application name.
+        userId:
+          type: string
+          description: User ID.
+        status:
+          type: string
+          description: Application status.
+        createdAt:
+          type: string
+          description: Creation timestamp.
+        lastModifiedAt:
+          type: string
+          description: Last modification timestamp.
+        credentials:
+          type: array
+          description: List of credentials.
+        appFamily:
+          type: string
+          description: Application family.
+    PutV1OrganizationsOrgreferenceidUsersUserreferenceAppsAppnam:
+      type: object
+      properties:
+        appId:
+          type: string
+          description: Application ID.
+        name:
+          type: string
+          description: Application name.
+        userId:
+          type: string
+          description: User ID.
+        status:
+          type: string
+          description: Application status (approved/revoked).
+        createdAt:
+          type: string
+          description: Creation timestamp.
+        lastModifiedAt:
+          type: string
+          description: Last modification timestamp.
+        credentials:
+          type: array
+          description: List of credentials.
+        appFamily:
+          type: string
+          description: Application family.
+    PutV1OrganizationsOrgreferenceidUsersUserreferenceUsermoneti:
+      type: object
+      properties:
+        billingType:
+          type: string
+          description: PREPAID or POSTPAID.
+        state:
+          type: string
+          description: ACTIVE or INACTIVE.
+      required:
+      - billingType
+      - state
+    PutV1OrganizationsOrgreferenceidUsersUserreferenceUsermoneti2:
+      type: object
+      properties:
+        code:
+          type: integer
+        data.state:
+          type: string
+        data.billingType:
+          type: string
+    PostV1OrganizationsOrgreferenceidSetaddonsRequest:
+      type: object
+      properties:
+        addonsConfig.monetizationConfig.enabled:
+          type: boolean
+          description: Must be true or false.
+      required:
+      - addonsConfig.monetizationConfig.enabled
+    PostV1OrganizationsOrgreferenceidSetaddonsResponse:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Operation resource name.
+        metadata.@type:
+          type: string
+          description: Metadata type URL.
+        metadata.operationType:
+          type: string
+          description: Operation type, e.g., UPDATE.
+        metadata.targetResourceName:
+          type: string
+          description: Target resource name.
+        metadata.state:
+          type: string
+          description: Current state, e.g., IN_PROGRESS.
+    PostV1OrganizationsOrganizationreferenceidUsersUserreference:
+      type: object
+      properties:
+        attribute:
+          type: array
+          description: List of attributes to set. An empty array clears or replaces with no attributes.
+        attribute[].name:
+          type: string
+          description: Attribute name. Empty or missing name returns 400.
+        attribute[].value:
+          type: string
+          description: Attribute value. null or omitted values become "".
+      required:
+      - attribute[].name
+    PostV1OrganizationsOrganizationreferenceidUsersUserreference2:
+      type: object
+      properties:
+        attribute:
+          type: array
+          description: Echoes the submitted attributes.
+        attribute[].name:
+          type: string
+          description: Attribute name.
+        attribute[].value:
+          type: string
+          description: Attribute value.
+  securitySchemes:
+    HTTP_Basic_Authentication:
+      type: http
+      scheme: basic
+      x-source: https://docs.yappes.com/manage_apis/related_topics/api_authentication/
+tags:
+- name: Api
+- name: Backend
+- name: Mint
+- name: Organizations
+- name: Services
+- name: Users
+security:
+- HTTP_Basic_Authentication: []

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/yappes/main/json-schema/yappes-get-v1-organizations-orgreferenceid-apis-response-schema.json",
+  "title": "GetV1OrganizationsOrgreferenceidApisResponse",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/GetV1OrganizationsOrgreferenceidApisResponse",
+  "type": "object",
+  "properties": {
+    "proxies": {
+      "type": "array",
+      "description": "Array of proxy objects."
+    },
+    "proxies[].apiId": {
+      "type": "string",
+      "description": "API identifier."
+    },
+    "proxies[].name": {
+      "type": "string",
+      "description": "Proxy name."
+    },
+    "proxies[].baseUrl": {
+      "type": "string",
+      "description": "Upstream base URL."
+    },
+    "proxies[].yappesBaseUrl": {
+      "type": "string",
+      "description": "Yappes base URL."
+    },
+    "proxies[].metaData": {
+      "type": "object",
+      "description": "Metadata object."
+    },
+    "proxies[].metaData.createdAt": {
+      "type": "string",
+      "description": "Creation timestamp."
+    },
+    "proxies[].metaData.lastModifiedAt": {
+      "type": "string",
+      "description": "Last modification timestamp."
+    },
+    "proxies[].metaData.subType": {
+      "type": "string",
+      "description": "Subtype, e.g., PROXY."
+    },
+    "proxies[].resources": {
+      "type": "array",
+      "description": "Array of resource objects."
+    },
+    "proxies[].resources[].endPointName": {
+      "type": "string",
+      "description": "Name of the endpoint."
+    },
+    "proxies[].resources[].endPoint": {
+      "type": "string",
+      "description": "Endpoint path."
+    },
+    "proxies[].resources[].method": {
+      "type": "string",
+      "description": "HTTP method."
+    }
+  }
+}

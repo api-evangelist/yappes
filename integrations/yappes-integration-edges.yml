@@ -1,0 +1,16 @@
+generated: '2026-10-21'
+method: none
+source:
+- https://zapier.com/apps/yappes/integrations
+- https://n8n.io/integrations/yappes/
+- https://composio.dev/toolkits/yappes
+- https://monid.ai/tools/yappes
+checked:
+- https://composio.dev/toolkits/yappes
+- https://monid.ai/tools/yappes
+- https://n8n.io/integrations/yappes/
+- https://zapier.com/apps/yappes/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []

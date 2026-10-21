@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/yappes/main/json-schema/yappes-post-v1-organizations-orgreferenceid-environments-envname-queries-r-schema.json",
+  "title": "PostV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesR",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PostV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesR",
+  "type": "object",
+  "properties": {
+    "timeRange": {
+      "type": "string",
+      "description": "<startISO>/<endISO> date range."
+    },
+    "metrics": {
+      "type": "array",
+      "description": "At least one metric. Allowed names: message_count, response_processing_time, total_response_time, target_response_time, request_processing_latency, response_processing_latency. Each item may include function: SUM, AVG, MIN, MAX, or COUNT (default SUM)."
+    },
+    "dimensions": {
+      "type": "array",
+      "description": "Group‑by dimensions. Allowed names: apiproxy, proxy, client_id, developer_email, request_uri, request_path, response_status_code, request_verb."
+    },
+    "groupByTimeUnit": {
+      "type": "string",
+      "description": "Time bucket unit: second, minute, hour, day, week, month, quarter, or year."
+    },
+    "limit": {
+      "type": "integer",
+      "description": "Max rows. Default 10000, maximum 100000."
+    }
+  },
+  "required": [
+    "timeRange",
+    "metrics"
+  ]
+}

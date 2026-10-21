@@ -1,0 +1,178 @@
+generated: '2026-10-21'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/yappes-openapi-generated.yml
+vocabulary:
+  name: Yappes Domain Vocabulary
+  description: 'Terms declared by Yappes''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-21'
+  terms:
+  - term: GetBackendPathResponse
+    definition: 'Object declared by the contract with fields: key.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/GetBackendPathResponse
+  - term: GetV1MintOrganizationsOrgreferenceidTransactionsUsersUserref
+    definition: 'Object declared by the contract with fields: transaction, transaction[].id, transaction[].transactionTime, transaction[].userEmail,
+      transaction[].apiProduct, transaction[].applicationName, transaction[].proxyName, transaction[].requestCount, transaction[].chargeAmount,
+      transaction[].chargeAmount.currencyCode, transaction[].chargeAmount.units, transaction[].chargeAmount.nanos. (1 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/GetV1MintOrganizationsOrgreferenceidTransactionsUsersUserref
+  - term: GetV1OrganizationsPartnerEmailidResponse
+    definition: 'Object declared by the contract with fields: code, status, data[].'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/GetV1OrganizationsPartnerEmailidResponse
+  - term: PostV1OrganizationsOrgreferenceidApiproductsApiproductrefere
+    definition: 'Object declared by the contract with fields: displayName, description, state, recurringFee, consumptionPricingType, consumptionPricingRates,
+      billingPeriod, paymentFundingModel.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PostV1OrganizationsOrgreferenceidApiproductsApiproductrefere
+  - term: PostV1OrganizationsOrgreferenceidApiproductsApiproductrefere2
+    definition: 'Object declared by the contract with fields: name, displayName, description, state, recurringFee, consumptionPricingType, consumptionPricingRates,
+      billingPeriod, paymentFundingModel, createdAt, lastModifiedAt.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PostV1OrganizationsOrgreferenceidApiproductsApiproductrefere2
+  - term: GetV1OrganizationsOrgreferenceidApisResponse
+    definition: 'Object declared by the contract with fields: proxies, proxies[].apiId, proxies[].name, proxies[].baseUrl, proxies[].yappesBaseUrl,
+      proxies[].metaData, proxies[].metaData.createdAt, proxies[].metaData.lastModifiedAt, proxies[].metaData.subType, proxies[].resources, proxies[].resources[].endPointName,
+      proxies[].resources[].endPoint. (1 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/GetV1OrganizationsOrgreferenceidApisResponse
+  - term: GetV1OrganizationsOrgreferenceidApisProxynameResponse
+    definition: 'Object declared by the contract with fields: proxy, proxy.apiId, proxy.name, proxy.baseUrl, proxy.yappesBaseUrl, proxy.metaData,
+      proxy.metaData.createdAt, proxy.metaData.lastModifiedAt, proxy.metaData.subType, proxy.resources, proxy.resources[].endPointName, proxy.resources[].endPoint.
+      (1 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/GetV1OrganizationsOrgreferenceidApisProxynameResponse
+  - term: GetV1OrganizationsOrgreferenceidAppsAppreferenceidResponse
+    definition: 'Object declared by the contract with fields: appId, name, userId, userEmail, status, createdAt, lastModifiedAt, credentials,
+      attributes, callbackUrl, scopes, keyExpiresIn.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/GetV1OrganizationsOrgreferenceidAppsAppreferenceidResponse
+  - term: PostV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesR
+    definition: 'Object declared by the contract with fields: timeRange, metrics, dimensions, groupByTimeUnit, limit.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PostV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesR
+  - term: PostV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesR2
+    definition: 'Object declared by the contract with fields: name, state, created, updated.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PostV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesR2
+  - term: GetV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesQu
+    definition: 'Object declared by the contract with fields: code, name, state, result.rows[].'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/GetV1OrganizationsOrgreferenceidEnvironmentsEnvnameQueriesQu
+  - term: PostV1OrganizationsOrgreferenceidUsersRequest
+    definition: 'Object declared by the contract with fields: email, firstName, lastName, userName, attributes.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PostV1OrganizationsOrgreferenceidUsersRequest
+  - term: PostV1OrganizationsOrgreferenceidUsersResponse
+    definition: 'Object declared by the contract with fields: code, status, data.email, data.firstName, data.lastName, data.organizationName,
+      data.status, data.userId, data.createdAt, data.modifiedAt.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PostV1OrganizationsOrgreferenceidUsersResponse
+  - term: PostV1OrganizationsOrgreferenceidUsersUseremailBalanceCredit
+    definition: 'Object declared by the contract with fields: transactionAmount, transactionAmount.currencyCode, transactionAmount.units, transactionAmount.nanos.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PostV1OrganizationsOrgreferenceidUsersUseremailBalanceCredit
+  - term: PostV1OrganizationsOrgreferenceidUsersUseremailBalanceCredit2
+    definition: 'Object declared by the contract with fields: wallets, wallets[].balance, wallets[].balance.currencyCode, wallets[].balance.units,
+      wallets[].balance.nanos, wallets[].lastCreditTime.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PostV1OrganizationsOrgreferenceidUsersUseremailBalanceCredit2
+  - term: GetV1OrganizationsOrgreferenceidUsersUserreferenceidResponse
+    definition: 'Object declared by the contract with fields: userId, email, firstName, lastName, userName, status, organizationName, createdAt,
+      lastModifiedAt, apps, attributes.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/GetV1OrganizationsOrgreferenceidUsersUserreferenceidResponse
+  - term: PostV1OrganizationsOrgreferenceidUsersUserreferenceAppsReque
+    definition: 'Object declared by the contract with fields: name, apiProducts, attributes, callbackUrl.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PostV1OrganizationsOrgreferenceidUsersUserreferenceAppsReque
+  - term: PostV1OrganizationsOrgreferenceidUsersUserreferenceAppsRespo
+    definition: 'Object declared by the contract with fields: appId, name, userId, status, createdAt, lastModifiedAt, credentials, appFamily.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PostV1OrganizationsOrgreferenceidUsersUserreferenceAppsRespo
+  - term: PutV1OrganizationsOrgreferenceidUsersUserreferenceAppsAppnam
+    definition: 'Object declared by the contract with fields: appId, name, userId, status, createdAt, lastModifiedAt, credentials, appFamily.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PutV1OrganizationsOrgreferenceidUsersUserreferenceAppsAppnam
+  - term: PutV1OrganizationsOrgreferenceidUsersUserreferenceUsermoneti
+    definition: 'Object declared by the contract with fields: billingType, state.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PutV1OrganizationsOrgreferenceidUsersUserreferenceUsermoneti
+  - term: PutV1OrganizationsOrgreferenceidUsersUserreferenceUsermoneti2
+    definition: 'Object declared by the contract with fields: code, data.state, data.billingType.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PutV1OrganizationsOrgreferenceidUsersUserreferenceUsermoneti2
+  - term: PostV1OrganizationsOrgreferenceidSetaddonsRequest
+    definition: 'Object declared by the contract with fields: addonsConfig.monetizationConfig.enabled.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PostV1OrganizationsOrgreferenceidSetaddonsRequest
+  - term: PostV1OrganizationsOrgreferenceidSetaddonsResponse
+    definition: 'Object declared by the contract with fields: name, metadata.@type, metadata.operationType, metadata.targetResourceName, metadata.state.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PostV1OrganizationsOrgreferenceidSetaddonsResponse
+  - term: PostV1OrganizationsOrganizationreferenceidUsersUserreference
+    definition: 'Object declared by the contract with fields: attribute, attribute[].name, attribute[].value.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PostV1OrganizationsOrganizationreferenceidUsersUserreference
+  - term: PostV1OrganizationsOrganizationreferenceidUsersUserreference2
+    definition: 'Object declared by the contract with fields: attribute, attribute[].name, attribute[].value.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/PostV1OrganizationsOrganizationreferenceidUsersUserreference2
+  - term: Api
+    definition: 'Resource group in the contract; its operation GET /: GET /'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/yappes-openapi-generated.yml
+  - term: Backend
+    definition: 'Resource group in the contract; its operation GET /backend/path: This endpoint serves the purpose of [brief description].'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/yappes-openapi-generated.yml
+  - term: Services
+    definition: 'Resource group in the contract; its operation POST /services/UserService: POST /services/UserService'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/yappes-openapi-generated.yml
+  - term: Users
+    definition: 'Resource group in the contract; its operation GET /users: GET /users'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/yappes-openapi-generated.yml
+  - term: Mint
+    definition: 'Resource group in the contract; its operation GET /v1/mint/organizations/{orgreferenceid}/transactions/users/{userreference}:
+      Credit user wallet balance and list wallet recharge transaction history.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/yappes-openapi-generated.yml
+  - term: Organizations
+    definition: 'Resource group in the contract; its operation GET /v1/organizations/partner/{emailid}: Requires a valid x‑yappes‑key header.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/yappes-openapi-generated.yml

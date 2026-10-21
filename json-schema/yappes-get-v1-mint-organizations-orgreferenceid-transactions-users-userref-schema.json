@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/yappes/main/json-schema/yappes-get-v1-mint-organizations-orgreferenceid-transactions-users-userref-schema.json",
+  "title": "GetV1MintOrganizationsOrgreferenceidTransactionsUsersUserref",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/GetV1MintOrganizationsOrgreferenceidTransactionsUsersUserref",
+  "type": "object",
+  "properties": {
+    "transaction": {
+      "type": "array",
+      "description": "List of transactions."
+    },
+    "transaction[].id": {
+      "type": "string",
+      "description": "Transaction identifier."
+    },
+    "transaction[].transactionTime": {
+      "type": "string",
+      "description": "Time of the transaction."
+    },
+    "transaction[].userEmail": {
+      "type": "string",
+      "description": "User email."
+    },
+    "transaction[].apiProduct": {
+      "type": "string",
+      "description": "Product identifier."
+    },
+    "transaction[].applicationName": {
+      "type": "string",
+      "description": "Application name."
+    },
+    "transaction[].proxyName": {
+      "type": "string",
+      "description": "Proxy name."
+    },
+    "transaction[].requestCount": {
+      "type": "integer",
+      "description": "Number of requests."
+    },
+    "transaction[].chargeAmount": {
+      "type": "object",
+      "description": "Charge amount details."
+    },
+    "transaction[].chargeAmount.currencyCode": {
+      "type": "string",
+      "description": "Currency code."
+    },
+    "transaction[].chargeAmount.units": {
+      "type": "string",
+      "description": "Units."
+    },
+    "transaction[].chargeAmount.nanos": {
+      "type": "integer",
+      "description": "Nanos."
+    },
+    "transaction[].status": {
+      "type": "string",
+      "description": "Transaction status."
+    }
+  }
+}

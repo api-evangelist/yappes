@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/yappes/main/json-schema/yappes-get-v1-organizations-orgreferenceid-apps-appreferenceid-response-schema.json",
+  "title": "GetV1OrganizationsOrgreferenceidAppsAppreferenceidResponse",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/yappes-openapi-generated.yml#/components/schemas/GetV1OrganizationsOrgreferenceidAppsAppreferenceidResponse",
+  "type": "object",
+  "properties": {
+    "appId": {
+      "type": "string",
+      "description": "Application ID."
+    },
+    "name": {
+      "type": "string",
+      "description": "Application name."
+    },
+    "userId": {
+      "type": "string",
+      "description": "User ID."
+    },
+    "userEmail": {
+      "type": "string",
+      "description": "User email."
+    },
+    "status": {
+      "type": "string",
+      "description": "Application status."
+    },
+    "createdAt": {
+      "type": "string",
+      "description": "Creation timestamp."
+    },
+    "lastModifiedAt": {
+      "type": "string",
+      "description": "Last modification timestamp."
+    },
+    "credentials": {
+      "type": "array",
+      "description": "List of credentials."
+    },
+    "attributes": {
+      "type": "array",
+      "description": "Custom attributes."
+    },
+    "callbackUrl": {
+      "type": "string",
+      "description": "OAuth callback URL."
+    },
+    "scopes": {
+      "type": "array",
+      "description": "OAuth scopes."
+    },
+    "keyExpiresIn": {
+      "type": "string",
+      "description": "Key expiration."
+    }
+  }
+}
